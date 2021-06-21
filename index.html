@@ -8,6 +8,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
@@ -46,15 +47,14 @@
             Whether it be hiking, camping, swimming, or simply enjoying the outdoors, there is something to enjoy for everyone. 
             To learn more about these historic and beautiful national wonders -- what to do, when to visit, its fascinating
             history -- explore this website!
-        </p>
-        
+        </p>        
         <br>
         <img src = "images/home.webp"
         width = "750px" height = "400px">
         <br>
         <br>
         <div class = "col-sm-5">
-            <h2>Yellowstone National Park</h2>
+            <h2><a href = "yellowstone.html" class = "explorelink">Yellowstone National Park</a></h2>
             <p class = "ptable">
                 Featuring dramatic canyons, alpine rivers, lush forests, and hot springs, Yellowstone makes for a 
                 beautiful experience of nature, wildlife, and geologic wonders.
@@ -65,7 +65,7 @@
         </div>
         <div class = "col-sm-2"></div>
         <div class = "col-sm-5">
-            <h2>Yosemite National Park</h2>
+            <h2><a href = "yosemite.html" class = "explorelink">Yosemite National Park</a></h2>
             <p class = "ptable">
                 Best known for its luscious waterfalls, deep valleys, and grand meadows, a visit to Yosemite allows you to 
                 take in the breathtaking wonders of the High Sierra. 
@@ -75,8 +75,27 @@
             class = "featured-image">
         </div>
         <br>
+        
         <div class = "col-sm-11 text-center">
-            <a href = "explore.html" class = "btn btn-default btn-lg" role = "button">More Information</a>
+            <br>
+            <a class = "btn btn-default btn-lg" role = "button" onclick = "addClass()">More Information</a>
+            <script>
+                function addClass() {
+                    var v = document.getElementById("tobeanimated");
+                    v.className += " animated";
+                }
+            </script>
+            <br>
+            <br>
+        </div>
+        <div class = "col-sm-1"></div>
+        <div id = "tobeanimated" style = "visibility: hidden;" class = "col-sm-12">
+            <br>
+            <p class = "pcontent">
+                To learn more about these national parks, whether it be specifics about each national park or comparisons
+                on average number of visitors per year or area in square miles, explore the navigation bar at the top of 
+                the screen!
+            </p>
             <br>
             <br>
         </div>

@@ -27,3 +27,16 @@
 .column-header {
     background-color:rgb(223, 246, 255);
 }
+
+@keyframes index-animation {
+    from {visibility: visible; opacity: 0;}
+    to {visibility: visible; opacity: 1;}
+}
+
+.animated {
+    animation: index-animation 5s forwards;
+}
+
+.tobeanimated {
+    height: 1px;
+}
