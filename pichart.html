@@ -2,32 +2,74 @@
 <html>
     <head>
         <title>Area in Square Miles</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+
     </head>
     <body>
-        <div id = "piechart"></div>
+        <div class = "container">
+            <nav class = "navbar navbar-default">
+                <div class = "container">
+                    <ul class = "nav navbar-nav">
+                        <li><a href = "index.html">Home</a></li>
+                        <li class = "dropdown">
+                            <a href = "explore.html" class = "dropdown-toggle" data-toggle = "dropdown">
+                                Explore
+                                <span class = "caret"></span>
+                            </a>
+                            <ul class = "dropdown-menu">
+                                <li><a href = "yellowstone.html">Yellowstone</a></li>
+                                <li><a href = "yosemite.html">Yosemite</a></li>
+                                <li><a href = "grandcanyon.html">Grand Canyon</a></li>
+                                <li><a href = "glacier.html">Glacier</a></li>
+                                <li><a href = "zion.html">Zion</a></li>
+                                <li><a href = "sequoia.html">Sequoia</a></li>
+                            </ul>
+                        </li>
+                        <li><a href = "graph.html">Number of Visitors</a></li>
+                    </ul>
+                </div>
+            </nav>       
 
-        <script type = "text/javascript" src = "https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript">
-            google.charts.load('current', {'packages':['corechart']});
-            google.charts.setOnLoadCallback(drawChart);
-
-            function drawChart() {
-                var data = google.visualization.arrayToDataTable([
-                    ['National Parks', 'Area in Square Miles'],
-                    ['Yellowstone', 3471],
-                    ['Yosemite', 1169],
-                    ['Grand Canyon', 1902],
-                    ['Glacier', 3307],
-                    ['Zion', 229],
-                    ['Sequoia', 631]
-                ]);
-
-                var options = {'title':'Area of National Parks in Square Miles', 'width':1000, 'height':800};
-
-                var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-                chart.draw(data, options);
-            }
-        </script>
-
+            <div class = "jumbotron">
+                <h1>Area in Square Miles</h1>
+            </div>
+            <p class = "pheading">
+                Compare the area in square miles of the national parks featured in this website by looking at the pi chart
+                shown below.
+            </p>
+            
+            <div id = "piechart"></div>
+            <script class = "pichart" type = "text/javascript" src = "https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript">
+                google.charts.load('current', {'packages':['corechart']});
+                google.charts.setOnLoadCallback(drawChart);
+    
+                function drawChart() {
+                    var data = google.visualization.arrayToDataTable([
+                        ['National Parks', 'Area in Square Miles'],
+                        ['Yellowstone', 3471],
+                        ['Yosemite', 1169],
+                        ['Grand Canyon', 1902],
+                        ['Glacier', 3307],
+                        ['Zion', 229],
+                        ['Sequoia', 631]
+                    ]);
+    
+                    var options = {'title':'Area of National Parks in Square Miles', 'width':1300, 'height':450};
+    
+                    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+                    chart.draw(data, options);
+                }
+            </script>
+    
+        </div>
     </body>
 </html>
