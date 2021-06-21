@@ -23,3 +23,7 @@
 .ptable  {
     font-size: 19px;
 }
+
+.column-header {
+    background-color:rgb(223, 246, 255);
+}
