@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Area in Square Miles</title>
+    </head>
+    <body>
+        <div id = "piechart"></div>
+
+        <script type = "text/javascript" src = "https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                    ['National Parks', 'Area in Square Miles'],
+                    ['Yellowstone', 3471],
+                    ['Yosemite', 1169],
+                    ['Grand Canyon', 1902],
+                    ['Glacier', 3307],
+                    ['Zion', 229],
+                    ['Sequoia', 631]
+                ]);
+
+                var options = {'title':'Area of National Parks in Square Miles', 'width':1000, 'height':800};
+
+                var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+                chart.draw(data, options);
+            }
+        </script>
+
+    </body>
+</html>
